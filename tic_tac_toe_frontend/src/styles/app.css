@@ -1,0 +1,213 @@
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(180deg, rgba(37,99,235,0.08), rgba(249,250,251,1));
+  background-color: var(--ocean-bg);
+  color: var(--ocean-text);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+.ocean-app {
+  min-height: 100%;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.game-wrapper {
+  width: 100%;
+  max-width: 560px;
+}
+
+.card {
+  background: var(--ocean-surface);
+  border: var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: 24px;
+}
+
+.card-header {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.title {
+  margin: 0;
+  font-size: 28px;
+  letter-spacing: 0.2px;
+}
+
+.subtitle {
+  margin: 6px 0 0 0;
+  color: rgba(17,24,39,0.7);
+  font-size: 14px;
+}
+
+.status-section {
+  margin: 16px 0 10px;
+  display: grid;
+  gap: 10px;
+}
+
+.player-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.badge {
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(37,99,235,0.08);
+  color: var(--ocean-text);
+  border: 1px solid rgba(37,99,235,0.2);
+  font-weight: 600;
+  transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
+}
+
+.badge.active {
+  background: rgba(37,99,235,0.15);
+  box-shadow: 0 6px 14px rgba(37,99,235,0.15);
+  transform: translateY(-1px);
+}
+
+.vs {
+  opacity: 0.6;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.status-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-weight: 600;
+}
+
+.status-message.turn .status-dot {
+  background: var(--ocean-primary);
+}
+
+.status-message.win .status-dot {
+  background: var(--ocean-success);
+}
+
+.status-message.draw .status-dot {
+  background: #6b7280; /* gray-500 */
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  display: inline-block;
+}
+
+.board {
+  width: 100%;
+  margin: 14px auto 18px;
+  display: grid;
+  gap: 10px;
+}
+
+.board-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+/* Use fluid square sizing with aspect-ratio */
+.square {
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(17,24,39,0.08);
+  background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(249,250,251,1));
+  box-shadow: var(--shadow-sm);
+  font-size: min(10vw, 46px);
+  font-weight: 800;
+  color: var(--ocean-primary);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: transform var(--transition), box-shadow var(--transition), background var(--transition), border-color var(--transition), color var(--transition), opacity var(--transition);
+}
+
+.square:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(37,99,235,0.35);
+}
+
+.square:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.square.filled {
+  cursor: default;
+  background: linear-gradient(180deg, rgba(237,242,255,0.5), rgba(255,255,255,0.95));
+}
+
+.square.win {
+  border-color: var(--ocean-secondary);
+  background: linear-gradient(180deg, rgba(245,158,11,0.18), rgba(255,255,255,0.95));
+  box-shadow: 0 10px 24px rgba(245,158,11,0.25);
+  color: #1f2937; /* darker text for contrast */
+}
+
+.square:disabled {
+  opacity: 0.8;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  margin-top: 4px;
+}
+
+.btn {
+  appearance: none;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  padding: 10px 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform var(--transition), box-shadow var(--transition), background var(--transition), border-color var(--transition), color var(--transition);
+}
+
+.btn-primary {
+  background: var(--ocean-primary);
+  color: white;
+  box-shadow: 0 8px 18px rgba(37,99,235,0.25);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(37,99,235,0.32);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+/* Responsive adjustments */
+@media (max-width: 520px) {
+  .card {
+    padding: 18px;
+    border-radius: var(--radius-md);
+  }
+  .title {
+    font-size: 24px;
+  }
+  .square {
+    font-size: min(12vw, 40px);
+  }
+}

@@ -1,0 +1,21 @@
+:root {
+  /* Ocean Professional Theme */
+  --ocean-primary: #2563EB; /* blue-600 */
+  --ocean-secondary: #F59E0B; /* amber-500 */
+  --ocean-success: #F59E0B; /* amber for success accent per guide */
+  --ocean-error: #EF4444; /* red-500 */
+  --ocean-bg: #f9fafb; /* gray-50 */
+  --ocean-surface: #ffffff;
+  --ocean-text: #111827; /* gray-900 */
+
+  --radius-lg: 16px;
+  --radius-md: 12px;
+  --radius-sm: 10px;
+
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-md: 0 8px 24px rgba(2, 6, 23, 0.08);
+  --shadow-lg: 0 20px 40px rgba(2, 6, 23, 0.12);
+
+  --border: 1px solid rgba(17,24,39,0.06);
+  --transition: 180ms cubic-bezier(.2,.8,.2,1);
+}
